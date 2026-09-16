@@ -1,0 +1,27 @@
+package com.finance.dto;
+
+import com.finance.entity.enums.TransactionType;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
+import java.math.BigDecimal;
+
+public record TransactionRequest(
+
+        Long transactionId,
+
+        @NotNull
+        TransactionType transactionType,
+
+        @NotNull
+        @Positive
+        BigDecimal amount,
+
+        @NotNull
+        Long accountId,
+
+        Long targetAccountId
+
+) {
+}
